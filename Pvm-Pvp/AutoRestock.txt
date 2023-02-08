@@ -1,0 +1,38 @@
+unsetalias 'bag'
+headmsg 'Select restock source container' 23
+promptalias 'bag'
+// Regs
+@movetype 0xf7a 'bag' 'backpack' 0 0 0 'any' 51
+pause 1000
+@movetype 0xf86 'bag' 'backpack' 0 0 0 'any' 51
+pause 1000
+@movetype 0xf7b 'bag' 'backpack' 0 0 0 'any' 51
+pause 1000
+@movetype 0xf88 'bag' 'backpack' 0 0 0 'any' 51
+pause 1000
+@movetype 0xf8c 'bag' 'backpack' 0 0 0 'any' 51
+pause 1000
+@movetype 0xf8d 'bag' 'backpack' 0 0 0 'any' 51
+pause 1000
+@movetype 0xf85 'bag' 'backpack' 0 0 0 'any' 51
+pause 1000
+@movetype 0xf84 'bag' 'backpack' 0 0 0 'any' 51
+pause 1000
+// bandages
+@movetype 0xe21 'bag' 'backpack' 0 0 0 'any' 100
+pause 1000
+// food
+@movetype 0x97b 'bag' 'backpack' 0 0 0 'any' 25
+pause 1000
+// potions
+// gcure
+@movetype 0xf07 'bag' 'backpack' 0 0 0 'any' 51
+pause 1000
+// gheal
+@movetype 0xf0c 'bag' 'backpack' 0 0 0 'any' 51
+pause 1000
+// trefresh
+@movetype 0xf0b 'bag' 'backpack' 0 0 0 'any' 51
+pause 1000
+// release source container
+unsetalias 'bag'
