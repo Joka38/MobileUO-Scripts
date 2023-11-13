@@ -1,0 +1,34 @@
+//vet near pet until full health
+if not timerexists 'vet'
+createtimer 'vet'
+settimer 'vet' 4500
+endif
+
+getfriend 'friend' 'nearest'
+if not @inrange friend 1
+headmsg 'Get Closer!!' 55
+stop
+endif
+
+if timer 'vet' >= 4500
+clearjournal
+bandage
+waitfortarget 15000
+target! friend
+endif
+pause 600
+ 
+if @injournal 'begin applying' 'system'
+settimer 'vet' 0
+while not @injournal 'not damaged' 'system'
+if timer 'vet' >= 4500
+bandage
+waitfortarget 15000
+target! friend
+settimer 'vet' 0
+pause 600
+endif
+endwhile
+settimer 'vet' 4500
+clearjournal
+endif
