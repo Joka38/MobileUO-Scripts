@@ -1,0 +1,63 @@
+//provo2mobs
+if not timerexists 'birdtimer'
+createtimer 'birdtimer'
+settimer 'birdtimer' 10000
+endif
+if timer 'birdtimer' < 10000
+headmsg 'wait...' 11
+stop
+endif
+
+cancelautotarget
+clearjournal
+if targetexists
+canceltarget
+endif
+@unsetalias 'provo1'
+@unsetalias 'provo2'
+@unsetalias enemy
+
+@getenemy 'murderer' 'criminal' 'gray' 'nearest'
+if @inrange enemy 10
+setalias 'provo1' enemy
+useskill 'provocation'
+waitfortarget 10000
+target! 'provo1'
+clickobject 'provo1'
+else
+headmsg 'no mob found' 11
+stop
+endif
+
+@getenemy 'murderer' 'criminal' 'gray' 'nearest'
+if @inrange enemy 10
+setalias 'provo2' enemy
+
+if serial 'provo1' = serial 'provo2'
+headmsg 'no 2nd mob found' 11
+waitfortarget 10000
+canceltarget
+settimer 'birdtimer' 5000
+stop
+endif
+
+waitfortarget 10000
+target! 'provo2'
+clickobject 'provo2'
+
+else
+headmsg '2nd mob too far' 11
+waitfortarget 10000
+canceltarget
+settimer 'birdtimer' 5000
+stop
+endif
+
+pause 800
+if @injournal 'Your music fails' 'System' or @injournal 'cannot be seen' 'System'
+headmsg 'fail...' 11
+settimer 'birdtimer' 5000
+stop
+endif
+
+settimer 'birdtimer' 0
