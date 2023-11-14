@@ -119,6 +119,8 @@ pushlist 'ItemTypes' 0x1450
 //etc
 //orc helm
 pushlist 'ItemTypes' 0x1F0B
+//bod(deed)
+pushlist 'ItemTypes' 0x14ef
 endif
 
 for 0 to ItemTypes
