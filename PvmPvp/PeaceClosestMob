@@ -1,0 +1,26 @@
+//peace closest
+if not timerexists 'birdtimer'
+createtimer 'birdtimer'
+settimer 'birdtimer' 10000
+endif
+if timer 'birdtimer' < 10000
+headmsg 'wait...' 11
+stop
+endif
+
+cancelautotarget
+if targetexists
+canceltarget
+endif
+
+@getenemy 'enemy' 'gray' 'murderer' 'criminal' 'closest'
+if @inrange 'enemy' 10
+useskill 'peacemaking'
+waitfortarget 10000
+target! enemy
+clickobject enemy
+settimer 'birdtimer' 0
+else
+headmsg 'no mob found' 11
+stop
+endif
