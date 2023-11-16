@@ -1,0 +1,48 @@
+//auto loot with macro
+
+if not listexists 'lootitem'
+createlist 'lootitem'
+//coin
+pushlist 'lootitem' 0xeed
+//gems
+pushlist 'lootitem' 0xf16
+pushlist 'lootitem' 0xf15
+pushlist 'lootitem' 0xf19
+pushlist 'lootitem' 0xf25
+pushlist 'lootitem' 0xf21
+pushlist 'lootitem' 0xf10
+pushlist 'lootitem' 0xf26
+pushlist 'lootitem' 0xf2d
+pushlist 'lootitem' 0xf13
+//regs
+pushlist 'lootitem' 0xf7a
+pushlist 'lootitem' 0xf7b
+pushlist 'lootitem' 0xf86
+pushlist 'lootitem' 0xf84
+pushlist 'lootitem' 0xf85
+pushlist 'lootitem' 0xf88
+pushlist 'lootitem' 0xf8d
+pushlist 'lootitem' 0xf8c
+//etc
+//pushlist 'lootitem' serial
+endif
+
+//where to go?
+if not @findalias 'lootbag'
+headmsg '*** Select Loot Bag ***' 33
+promptalias 'lootbag'
+endif
+
+sysmsg 'select container' '44'
+promptalias 'loot'
+useobject 'loot'
+sysmsg 'container found'
+pause 600
+
+//loot
+for 0 to lootitem
+while @findtype lootitem[] any 'loot'
+moveitem found 'lootbag'
+pause 800
+endwhile
+endfor
