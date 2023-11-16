@@ -1,0 +1,45 @@
+//door
+if not @listexists 'opendoor'
+createlist 'opendoor'
+pushlist 'opendoor' 0x06a6
+pushlist 'opendoor' 0x0676
+pushlist 'opendoor' 0x067c
+pushlist 'opendoor' 0x0682
+endif
+if not @listexists 'closedoor'
+createlist 'closedoor'
+pushlist 'closedoor' 0x06a5
+pushlist 'closedoor' 0x0675
+pushlist 'closedoor' 0x067b
+pushlist 'closedoor' 0x0681
+endif
+
+if not @findtype 0x1769 any ground 1 1 and not @findtype 0x176a any ground 1 1 and not @findtype 0x176b any ground 1 1
+headmsg 'No Key Found' 22
+stop
+else
+setalias 'key' 'found'
+endif
+
+for 0 to 'opendoor'
+if @findtype opendoor[] any ground 1 2
+useobject! 'found'
+useobject 'key'
+waitfortarget 3000
+target 'found'
+useskill 'detecting hidden'
+waitfortarget 3000
+target self
+stop
+endif
+endfor
+
+for 0 to 'closedoor'
+if @findtype closedoor[] any ground 1 2
+useobject 'key'
+waitfortarget 3000
+target 'found'
+useobject 'found'
+stop
+endif
+endfor
