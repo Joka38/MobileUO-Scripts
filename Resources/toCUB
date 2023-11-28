@@ -119,14 +119,21 @@ pushlist 'ItemTypes' 0x1450
 //etc
 //orc helm
 pushlist 'ItemTypes' 0x1F0B
-//bod(deed)
+//bod
 pushlist 'ItemTypes' 0x14ef
+//map
+pushlist 'ItemTypes' 0x14ec
 endif
 
 for 0 to ItemTypes
 while @findtype ItemTypes[] any 'toCUBbag'
 moveitem found 'CUB'
 pause 2500
+if @injournal 'Unable to' 'System'
+moveitem found backpack
+pause 800
+clearjournal
+endif
 endwhile
 endfor
 
