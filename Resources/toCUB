@@ -129,10 +129,9 @@ for 0 to ItemTypes
 while @findtype ItemTypes[] any 'toCUBbag'
 moveitem found 'CUB'
 pause 2500
-if @injournal 'Unable to' 'System'
+if @findobject found any 'toCUBbag'
 moveitem found backpack
 pause 800
-clearjournal
 endif
 endwhile
 endfor
