@@ -1,0 +1,110 @@
+@getenemy 'gray' 'murderer'
+
+if @name 'enemy' == 'an arctic wolf' and @inrange 'enemy' 25
+headmsg 'found an arctic wolf' '44'
+playsound 61
+stop
+
+elseif @name 'enemy' == 'a snow jaguar' and @inrange 'enemy' 25
+headmsg 'found a snow jaguar' '44'
+playsound 61
+stop
+
+elseif @name 'enemy' == 'a frost bear' and @inrange 'enemy' 25
+headmsg 'found a frost bear' '44'
+playsound 61
+stop
+
+elseif @name 'enemy' == 'a snow jaguar' and @inrange 'enemy' 25
+headmsg 'found a snow jaguar' '44'
+playsound 61
+stop
+
+elseif @name 'enemy' == 'a bloodthirsty bull' and @inrange 'enemy' 25
+headmsg 'found a bloodthirsty bull' '44'
+playsound 61
+stop
+
+elseif @name 'enemy' == 'a mad cow' and @inrange 'enemy' 25
+headmsg 'found a mad cow' '44'
+playsound 61
+stop
+
+elseif @name 'enemy' == 'a black sheep' and @inrange 'enemy' 25
+headmsg 'found a black sheep' '44'
+playsound 61
+stop
+
+elseif @name 'enemy' == 'a majestic hart' and @inrange 'enemy' 25
+headmsg 'found a majestic hart' '44'
+playsound 61
+stop
+
+elseif @name 'enemy' == 'a silverback gorilla' and @inrange 'enemy' 25
+headmsg 'found a silverback gorilla' '44'
+playsound 61
+stop
+
+elseif @name 'enemy' == 'a crocodile' and @inrange 'enemy' 25
+headmsg 'found a crocodile' '44'
+playsound 61
+stop
+
+elseif @name 'enemy' == 'a rattlesnake' and @inrange 'enemy' 25
+headmsg 'found a rattlesnake' '44'
+playsound 61
+stop
+
+elseif @name 'enemy' == 'a dark wolf' and @inrange 'enemy' 25
+headmsg 'found a dark wolf' '44'
+playsound 61
+stop
+
+elseif @name 'enemy' == 'a raging grizzly bear' and @inrange 'enemy' 25
+headmsg 'found a raging grizzly bear' '44'
+playsound 61
+stop
+
+elseif @name 'enemy' == 'a jwilson' and @inrange 'enemy' 25
+headmsg 'found a jwilson' '44'
+playsound 61
+stop
+
+elseif @name 'enemy' == 'a king scropion' and @inrange 'enemy' 25
+headmsg 'found a king scropion' '44'
+playsound 61
+stop
+
+elseif @name 'enemy' == 'a flying monkey' and @inrange 'enemy' 25
+headmsg 'found a flying monkey' '44'
+playsound 61
+stop
+
+elseif @name 'enemy' == 'a ram' and @inrange 'enemy' 25
+headmsg 'found a ram' '44'
+playsound 61
+stop
+
+elseif @name 'enemy' == 'a wild boar' and @inrange 'enemy' 25
+headmsg 'found a wild boar' '44'
+playsound 61
+stop
+
+elseif @name 'enemy' == 'a sewer rat' and @inrange 'enemy' 25
+headmsg 'found a sewer rat' '44'
+playsound 61
+stop
+
+elseif @name 'enemy' == 'a hypno toad' and @inrange 'enemy' 25
+headmsg 'found a hypno toad' '44'
+playsound 61
+stop
+
+elseif @name 'enemy' == 'a savage ostard' and @inrange 'enemy' 25
+headmsg 'found a savage ostard' '44'
+playsound 61
+stop
+
+endif
+
+pause 700
