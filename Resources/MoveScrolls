@@ -1,0 +1,84 @@
+```//move scrolls
+if not listexists 'Scrolls'
+createlist 'Scrolls'
+pushlist 'Scrolls' 0x1f2d
+pushlist 'Scrolls' 0x1f2e
+pushlist 'Scrolls' 0x1f2f
+pushlist 'Scrolls' 0x1f30
+pushlist 'Scrolls' 0x1f31
+pushlist 'Scrolls' 0x1f32
+pushlist 'Scrolls' 0x1f33
+pushlist 'Scrolls' 0x1f34
+pushlist 'Scrolls' 0x1f35
+pushlist 'Scrolls' 0x1f36
+pushlist 'Scrolls' 0x1f37
+pushlist 'Scrolls' 0x1f38
+pushlist 'Scrolls' 0x1f39
+pushlist 'Scrolls' 0x1f3a
+pushlist 'Scrolls' 0x1f3b
+pushlist 'Scrolls' 0x1f3c
+pushlist 'Scrolls' 0x1f3d
+pushlist 'Scrolls' 0x1f3e
+pushlist 'Scrolls' 0x1f3f
+pushlist 'Scrolls' 0x1f40
+pushlist 'Scrolls' 0x1f41
+pushlist 'Scrolls' 0x1f42
+pushlist 'Scrolls' 0x1f43
+pushlist 'Scrolls' 0x1f44
+pushlist 'Scrolls' 0x1f45
+pushlist 'Scrolls' 0x1f46
+pushlist 'Scrolls' 0x1f47
+pushlist 'Scrolls' 0x1f48
+pushlist 'Scrolls' 0x1f49
+pushlist 'Scrolls' 0x1f4a
+pushlist 'Scrolls' 0x1f4b
+pushlist 'Scrolls' 0x1f4c
+pushlist 'Scrolls' 0x1f4d
+pushlist 'Scrolls' 0x1f4e
+pushlist 'Scrolls' 0x1f4f
+pushlist 'Scrolls' 0x1f50
+pushlist 'Scrolls' 0x1f51
+pushlist 'Scrolls' 0x1f52
+pushlist 'Scrolls' 0x1f53
+pushlist 'Scrolls' 0x1f54
+pushlist 'Scrolls' 0x1f55
+pushlist 'Scrolls' 0x1f56
+pushlist 'Scrolls' 0x1f57
+pushlist 'Scrolls' 0x1f58
+pushlist 'Scrolls' 0x1f59
+pushlist 'Scrolls' 0x1f5a
+pushlist 'Scrolls' 0x1f5b
+pushlist 'Scrolls' 0x1f5c
+pushlist 'Scrolls' 0x1f5d
+pushlist 'Scrolls' 0x1f5e
+pushlist 'Scrolls' 0x1f5f
+pushlist 'Scrolls' 0x1f60
+pushlist 'Scrolls' 0x1f61
+pushlist 'Scrolls' 0x1f62
+pushlist 'Scrolls' 0x1f63
+pushlist 'Scrolls' 0x1f64
+pushlist 'Scrolls' 0x1f65
+pushlist 'Scrolls' 0x1f66
+pushlist 'Scrolls' 0x1f67
+pushlist 'Scrolls' 0x1f68
+pushlist 'Scrolls' 0x1f69
+pushlist 'Scrolls' 0x1f6a
+pushlist 'Scrolls' 0x1f6b
+pushlist 'Scrolls' 0x1f6c
+endif
+
+headmsg 'Select Bag Scrolls Are In' 55
+promptalias 'scrollfrom'
+
+headmsg 'Select Bag Where Scrolls Go' 66
+promptalias 'scrollto'
+
+for 0 to Scrolls
+while @findtype Scrolls[] any 'scrollfrom'
+moveitem found 'scrollto'
+pause 800
+endwhile
+endfor
+
+playsound 42
+headmsg 'Done !!' 44
