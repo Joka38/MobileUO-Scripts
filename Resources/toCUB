@@ -123,6 +123,16 @@ pushlist 'ItemTypes' 0x1F0B
 pushlist 'ItemTypes' 0x14ef
 //map
 pushlist 'ItemTypes' 0x14ec
+//from shipwrick
+pushlist 'ItemTypes' 0x1CE5
+pushlist 'ItemTypes' 0x1CDD
+pushlist 'ItemTypes' 0x1B16
+pushlist 'ItemTypes' 0x1CE2
+pushlist 'ItemTypes' 0x1CE0
+pushlist 'ItemTypes' 0x1CE9
+pushlist 'ItemTypes' 0x1CEC
+pushlist 'ItemTypes' 0x1CE8
+pushlist 'ItemTypes' 0x0A2A
 endif
 
 for 0 to ItemTypes
