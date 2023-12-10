@@ -133,6 +133,8 @@ pushlist 'ItemTypes' 0x1CE9
 pushlist 'ItemTypes' 0x1CEC
 pushlist 'ItemTypes' 0x1CE8
 pushlist 'ItemTypes' 0x0A2A
+pushlist 'ItemTypes' 0x1CE1
+pushlist 'ItemTypes' 0x1B15
 endif
 
 for 0 to ItemTypes
