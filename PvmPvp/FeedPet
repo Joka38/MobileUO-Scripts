@@ -1,0 +1,14 @@
+//feed pet with list
+if not listexists 'petlist'
+createlist 'petlist'
+pushlist 'petlist' 0x0031e209
+pushlist 'petlist' 0x0009dcb4
+pushlist 'petlist' 0x0033639d
+pushlist 'petlist' 0x0006935d
+endif
+for 0 to petlist
+if @inrange petlist[] 2
+feed petlist[] 'Meat' 0 1
+pause 800
+endif
+endfor
