@@ -36,7 +36,7 @@ pushlist 'yarnthread' 0x0fa0
 endif
 
 for 0 to 'cwf'
-while @findtype cwf[] 'any' 'crate'
+while @findtype cwf[] 'any' 'materialcrate'
 @moveitem found backpack 0 0 0 30
 pause 1000
 while @findtype cwf[] any backpack
