@@ -1,0 +1,23 @@
+//Loom
+for 0 to 'yarnthread'
+while @findtype yarnthread[] 'any' 'crate'
+playmacro 'Unload'
+@moveitem found backpack 0 0 0 30
+pause 1000
+while @findtype yarnthread[] any backpack
+useobject! 'found'
+waitfortarget 15000
+target 'loom'
+pause 1500
+if weight > 380
+playmacro 'Unload'
+endif
+endwhile
+endwhile
+endfor
+
+playmacro 'Unload'
+
+playsound 61
+messagebox 'FINISH!' 'All materials were processed into bottle of clothes'
+stop
