@@ -18,7 +18,7 @@ endif
 
 //choose crate
 headmsg 'CHOOSE CREAT' '11'
-promptalias 'crate'
+promptalias 'materialcrate'
 
 if not listexists 'cwf'
 createlist 'cwf'
@@ -31,6 +31,7 @@ endif
 if not listexists 'yarnthread'
 createlist 'yarnthread'
 pushlist 'yarnthread' 0x0e1d
+pushlist 'yarnthread' 0x0e1f
 pushlist 'yarnthread' 0x0fa0
 endif
 
