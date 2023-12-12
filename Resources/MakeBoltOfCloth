@@ -1,0 +1,54 @@
+// make bolt of cloth
+
+//find wheel
+if not @findtype 0x1015 any ground 0 2 and not @findtype 0x101c any ground 0 2 and not @findtype 0x1019 any ground 0 2
+headmsg 'No Wheel Found!' '22'
+stop
+else
+setalias 'wheel' 'found'
+endif
+
+//find loom
+if not @findtype 0x105F any ground 0 2 and not @findtype 0x1065 any ground 0 2 and not @findtype 0x1062 any ground 0 2
+headmsg 'No Loom Found!' '22'
+stop
+else
+setalias 'loom' 'found'
+endif
+
+//choose crate
+headmsg 'CHOOSE CREAT' '11'
+promptalias 'crate'
+
+if not listexists 'cwf'
+createlist 'cwf'
+pushlist 'cwf' 0x0df8
+pushlist 'cwf' 0x0df9
+pushlist 'cwf' 0x1a9c
+pushlist 'cwf' 0x1a9d
+endif
+
+if not listexists 'yarnthread'
+createlist 'yarnthread'
+pushlist 'yarnthread' 0x0e1d
+pushlist 'yarnthread' 0x0fa0
+endif
+
+for 0 to 'cwf'
+while @findtype cwf[] 'any' 'crate'
+@moveitem found backpack 0 0 0 30
+pause 1000
+while @findtype cwf[] any backpack
+useobject! 'found'
+waitfortarget 15000
+target 'wheel'
+pause 4600
+if weight > 300
+playmacro 'Unload'
+endif
+endwhile
+endwhile
+endfor
+
+playmacro 'Unload'
+playmacro 'Loom'
