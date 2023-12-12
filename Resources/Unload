@@ -1,11 +1,11 @@
 //Unload
 for 0 to yarnthread
 if @findtype yarnthread[] any backpack
-@moveitem found 'crate'
+@moveitem found 'materialcrate'
 pause 1000
 endif
 endfor
 
 if @findtype 0x0f95 any backpack
-@moveitem found 'crate'
+@moveitem found 'materialcrate'
 endif 
