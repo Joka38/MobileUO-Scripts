@@ -1,4 +1,4 @@
-// make bolt of cloth
+// make bottle of cloth
 
 //find wheel
 if not @findtype 0x1015 any ground 0 2 and not @findtype 0x101c any ground 0 2 and not @findtype 0x1019 any ground 0 2
