@@ -1,0 +1,39 @@
+//mining until no metal
+while not dead
+if @findtype 0x0F39 any backpack or @findtype 0x0E86 any backpack
+useobject found
+else
+headmsg 'No Digging Tool !' 66
+playsound 803
+stop
+endif
+waitfortarget 3000
+
+if direction == 0
+  targettileoffset 0 -1 0
+elseif direction == 1
+  targettileoffset 1 -1 0
+elseif direction == 2
+  targettileoffset 1 0 0
+elseif direction == 3
+  targettileoffset 1 1 0
+elseif direction == 4
+  targettileoffset 0 1 0
+elseif direction == 5
+  targettileoffset -1 1 0
+elseif direction == 6
+  targettileoffset -1 0 0
+elseif direction == 7
+  targettileoffset -1 -1 0
+endif
+
+pause 850
+
+if @injournal 'no metal here' 'System'
+headmsg 'No More Metal Here!' '33'
+clearjournal
+playsound 42
+stop
+endif
+
+endwhile
