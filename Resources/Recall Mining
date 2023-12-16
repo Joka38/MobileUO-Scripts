@@ -1,0 +1,147 @@
+//recall mining
+
+if not @findalias 'orestorage'
+headmsg 'Select Ore Storage' 88
+promptalias 'orestorage'
+endif
+
+if not @findalias 'bankrune'
+headmsg 'Select Bank Rune' 77
+promptalias 'bankrune'
+endif
+
+if not listexists 'oretype'
+createlist 'oretype'
+pushlist 'oretype' 0x19B9
+pushlist 'oretype' 0x19B7
+pushlist 'oretype' 0x19b8
+pushlist 'oretype' 0x19ba
+endif
+
+if not listexists 'orebook'
+createlist 'orebook'
+pushlist 'orebook' 0x4FA8C3A1
+pushlist 'orebook' 0x4FA8C044
+pushlist 'orebook' 0x4FA8C303
+endif
+
+for 0 to orebook
+
+useobject orebook[]
+waitforgump 0x554b87f3 30000
+replygump 0x554b87f3 5
+pause 4000
+headmsg 'Rune 1'
+playmacro 'mining'
+
+useobject orebook[]
+waitforgump 0x554b87f3 30000
+replygump 0x554b87f3 11
+pause 4000
+headmsg 'Rune 2'
+playmacro 'mining'
+
+useobject orebook[]
+waitforgump 0x554b87f3 30000
+replygump 0x554b87f3 17
+pause 4000
+headmsg 'Rune 3'
+playmacro 'mining'
+
+useobject orebook[]
+waitforgump 0x554b87f3 30000
+replygump 0x554b87f3 23
+pause 4000
+headmsg 'Rune 4'
+playmacro 'mining'
+
+useobject orebook[]
+waitforgump 0x554b87f3 30000
+replygump 0x554b87f3 29
+pause 4000
+headmsg 'Rune 5'
+playmacro 'mining'
+
+useobject orebook[]
+waitforgump 0x554b87f3 30000
+replygump 0x554b87f3 35
+pause 4000
+headmsg 'Rune 6'
+playmacro 'mining'
+
+useobject orebook[]
+waitforgump 0x554b87f3 30000
+replygump 0x554b87f3 41
+pause 4000
+headmsg 'Rune 7'
+playmacro 'mining'
+
+useobject orebook[]
+waitforgump 0x554b87f3 30000
+replygump 0x554b87f3 47
+pause 4000
+headmsg 'Rune 8'
+playmacro 'mining'
+
+useobject orebook[]
+waitforgump 0x554b87f3 30000
+replygump 0x554b87f3 53
+pause 4000
+headmsg 'Rune 9'
+playmacro 'mining'
+
+useobject orebook[]
+waitforgump 0x554b87f3 30000
+replygump 0x554b87f3 59
+pause 4000
+headmsg 'Rune 10'
+playmacro 'mining'
+
+useobject orebook[]
+waitforgump 0x554b87f3 30000
+replygump 0x554b87f3 65
+pause 4000
+headmsg 'Rune 11'
+playmacro 'mining'
+
+useobject orebook[]
+waitforgump 0x554b87f3 30000
+replygump 0x554b87f3 71
+pause 4000
+headmsg 'Rune 12'
+playmacro 'mining'
+
+useobject orebook[]
+waitforgump 0x554b87f3 30000
+replygump 0x554b87f3 77
+pause 4000
+headmsg 'Rune 13'
+playmacro 'mining'
+
+useobject orebook[]
+waitforgump 0x554b87f3 30000
+replygump 0x554b87f3 83
+pause 4000
+headmsg 'Rune 14'
+playmacro 'mining'
+
+useobject orebook[]
+waitforgump 0x554b87f3 30000
+replygump 0x554b87f3 89
+pause 4000
+headmsg 'Rune 15'
+playmacro 'mining'
+
+useobject orebook[]
+waitforgump 0x554b87f3 30000
+replygump 0x554b87f3 95
+pause 4000
+headmsg 'Rune 16'
+playmacro 'mining'
+
+headmsg 'Next Runebook'
+
+endfor
+
+playsound 41
+headmsg 'Recall Mining Done' 33
