@@ -1,4 +1,4 @@
-# MobilUO Scripts
+# MobileUO Scripts
 
 Scripts and macros for the mobile ultima online client(MobileUO)
 
