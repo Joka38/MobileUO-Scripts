@@ -1,0 +1,28 @@
+//move gems
+if not listexists 'Gems'
+createlist 'Gems'
+pushlist 'Gems' 0x0f10
+pushlist 'Gems' 0x0f15
+pushlist 'Gems' 0x0f25
+pushlist 'Gems' 0x0f13
+pushlist 'Gems' 0x0f26
+pushlist 'Gems' 0x0f16
+pushlist 'Gems' 0x0f21
+pushlist 'Gems' 0x0f19
+pushlist 'Gems' 0x0f2d
+endif
+
+headmsg 'Select Bag Gems Are In' 33
+promptalias 'gemfrom'
+headmsg 'Select Bag Where Gems Go' 44
+promptalias 'gemto'
+
+for 0 to Gems
+while @findtype Gems[] any 'gemfrom'
+moveitem found 'gemto'
+pause 800
+endwhile
+endfor
+
+playsound 42
+headmsg 'Done !!' 77
