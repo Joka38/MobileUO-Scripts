@@ -1,0 +1,38 @@
+//mining
+
+while not @injournal 'no metal here' 'System'
+if @findtype 0x0f39 any backpack or @findtype 0x0e86 any backpack
+useobject found
+waitfortarget 3000
+targettileoffset 0 0 0
+pause 800
+else
+headmsg 'No Digging Tool!' 33
+stop
+endif
+endwhile
+clearjournal
+
+//pick up ore
+for 0 to oretype
+if @findtype oretype[] any ground 0 1
+moveitem found backpack
+pause 1000
+endif
+endfor
+
+//back to bank
+cast 'recall'
+waitfortarget 30000
+target 'bankrune'
+pause 3500
+
+//drop ore
+msg 'bank'
+pause 2000
+for 0 to oretype
+if @findtype oretype[] any backpack
+moveitem found 'orestorage'
+pause 1000
+endif
+endfor
