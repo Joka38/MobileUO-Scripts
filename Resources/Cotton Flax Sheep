@@ -1,0 +1,37 @@
+//sheep cotton flax
+if not listexists 'cottonflax'
+createlist 'cottonflax'
+pushlist 'cottonflax' 0x0c51
+pushlist 'cottonflax' 0x0c52
+pushlist 'cottonflax' 0x0c53
+pushlist 'cottonflax' 0x0c54
+pushlist 'cottonflax' 0x1a9a
+pushlist 'cottonflax' 0x1a9b
+pushlist 'cottonflax' 0x1a99
+endif
+
+while not dead
+
+if weight > 380
+headmsg 'Need Unload !' 66
+playsound 42
+stop
+endif
+
+//auto-shear
+if @findtype 0x00cf 'any' 'ground' 1 2
+usetype 0x0F52 any backpack
+waitfortarget 9000
+target! found
+pause 600
+endif
+
+//pick up cotton and flax
+for 0 to cottonflax
+if @findtype cottonflax[] 'any' 'ground' 1 2
+useobject found
+pause 600
+endif
+endfor
+
+endwhile
