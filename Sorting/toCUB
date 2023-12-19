@@ -1,0 +1,152 @@
+//to CUB
+if not @findtype 0x0e77 1419 ground 0 2
+headmsg 'No CUB Around' 22
+stop
+else
+setalias 'CUB' found
+endif
+headmsg 'Select Source Bag' 44
+promptalias 'toCUBbag'
+
+if not listexists 'ItemTypes'
+createlist 'ItemTypes'
+//Shields
+pushlist 'ItemTypes' 0x1b72 
+pushlist 'ItemTypes' 0x1b73 
+pushlist 'ItemTypes' 0x1b7b 
+pushlist 'ItemTypes' 0x1b74 
+pushlist 'ItemTypes' 0x1b79 
+pushlist 'ItemTypes' 0x1b7a 
+pushlist 'ItemTypes' 0x1b76 
+//Platemail
+pushlist 'ItemTypes' 0x1408 
+pushlist 'ItemTypes' 0x1410 
+pushlist 'ItemTypes' 0x1411 
+pushlist 'ItemTypes' 0x1412 
+pushlist 'ItemTypes' 0x1413 
+pushlist 'ItemTypes' 0x1414 
+pushlist 'ItemTypes' 0x1415 
+pushlist 'ItemTypes' 0x140a 
+//Helmet
+pushlist 'ItemTypes' 0x140c 
+pushlist 'ItemTypes' 0x140e 
+//Chainmail
+pushlist 'ItemTypes' 0x13bb 
+pushlist 'ItemTypes' 0x13be 
+pushlist 'ItemTypes' 0x13bf 
+//Ringmail
+pushlist 'ItemTypes' 0x13ee 
+pushlist 'ItemTypes' 0x13eb 
+pushlist 'ItemTypes' 0x13ec 
+pushlist 'ItemTypes' 0x13f0 
+//Studded
+pushlist 'ItemTypes' 0x13da 
+pushlist 'ItemTypes' 0x13db 
+pushlist 'ItemTypes' 0x13d5 
+pushlist 'ItemTypes' 0x13d6 
+pushlist 'ItemTypes' 0x13dc 
+//Leather
+pushlist 'ItemTypes' 0x13c6 
+pushlist 'ItemTypes' 0x13cd 
+pushlist 'ItemTypes' 0x13cc 
+pushlist 'ItemTypes' 0x13cb 
+pushlist 'ItemTypes' 0x13c7 
+pushlist 'ItemTypes' 0x1db9 
+//Female Armor
+pushlist 'ItemTypes' 0x1c04 
+pushlist 'ItemTypes' 0x1c0c 
+pushlist 'ItemTypes' 0x1c02 
+pushlist 'ItemTypes' 0x1c00 
+pushlist 'ItemTypes' 0x1c08 
+pushlist 'ItemTypes' 0x1c06 
+pushlist 'ItemTypes' 0x1c0a 
+//Fencing
+pushlist 'ItemTypes' 0xf62  
+pushlist 'ItemTypes' 0x1403 
+pushlist 'ItemTypes' 0xe87  
+pushlist 'ItemTypes' 0x1405 
+pushlist 'ItemTypes' 0x1401 
+pushlist 'ItemTypes' 0xf52  
+//Macing
+pushlist 'ItemTypes' 0x13b0 
+pushlist 'ItemTypes' 0xdf0  
+pushlist 'ItemTypes' 0x1439 
+pushlist 'ItemTypes' 0x1407 
+pushlist 'ItemTypes' 0xe89  
+pushlist 'ItemTypes' 0x143d 
+pushlist 'ItemTypes' 0x13b4 
+pushlist 'ItemTypes' 0xe81  
+pushlist 'ItemTypes' 0x13f8 
+pushlist 'ItemTypes' 0xf5c  
+pushlist 'ItemTypes' 0x143b 
+//Swords
+pushlist 'ItemTypes' 0x13b9 
+pushlist 'ItemTypes' 0xf61  
+pushlist 'ItemTypes' 0x1441 
+pushlist 'ItemTypes' 0x13b6 
+pushlist 'ItemTypes' 0xec4  
+pushlist 'ItemTypes' 0x13f6 
+pushlist 'ItemTypes' 0xf5e  
+pushlist 'ItemTypes' 0x13ff 
+pushlist 'ItemTypes' 0xec3  
+//Axes
+pushlist 'ItemTypes' 0xf43 
+pushlist 'ItemTypes' 0xf45 
+pushlist 'ItemTypes' 0xf4d 
+pushlist 'ItemTypes' 0xf4b  
+pushlist 'ItemTypes' 0x143e 
+pushlist 'ItemTypes' 0x13fb 
+pushlist 'ItemTypes' 0x1443 
+pushlist 'ItemTypes' 0xf47  
+pushlist 'ItemTypes' 0xf49  
+pushlist 'ItemTypes' 0xe85  
+pushlist 'ItemTypes' 0xe86  
+//Bows
+pushlist 'ItemTypes' 0x13fd 
+pushlist 'ItemTypes' 0xf50  
+pushlist 'ItemTypes' 0x13b2 
+//Wands
+pushlist 'ItemTypes' 0xdf2
+pushlist 'ItemTypes' 0xdf3
+pushlist 'ItemTypes' 0xdf4
+pushlist 'ItemTypes' 0xdf5
+//Bone Armor
+pushlist 'ItemTypes' 0x1451
+pushlist 'ItemTypes' 0x144f
+pushlist 'ItemTypes' 0x1452
+pushlist 'ItemTypes' 0x144e
+pushlist 'ItemTypes' 0x1450
+//etc
+//orc helm
+pushlist 'ItemTypes' 0x1F0B
+//bod
+pushlist 'ItemTypes' 0x14ef
+//map
+pushlist 'ItemTypes' 0x14ec
+//from shipwrick
+pushlist 'ItemTypes' 0x1CE5
+pushlist 'ItemTypes' 0x1CDD
+pushlist 'ItemTypes' 0x1B16
+pushlist 'ItemTypes' 0x1CE2
+pushlist 'ItemTypes' 0x1CE0
+pushlist 'ItemTypes' 0x1CE9
+pushlist 'ItemTypes' 0x1CEC
+pushlist 'ItemTypes' 0x1CE8
+pushlist 'ItemTypes' 0x0A2A
+pushlist 'ItemTypes' 0x1CE1
+pushlist 'ItemTypes' 0x1B15
+endif
+
+for 0 to ItemTypes
+while @findtype ItemTypes[] any 'toCUBbag'
+moveitem found 'CUB'
+pause 2500
+if @findobject found any 'toCUBbag'
+moveitem found backpack
+pause 800
+endif
+endwhile
+endfor
+
+playsound 42
+headmsg 'Done !' 88
