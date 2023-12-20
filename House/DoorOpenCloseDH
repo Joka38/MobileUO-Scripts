@@ -34,7 +34,7 @@ target 'found'
 useskill 'detecting hidden'
 waitfortarget 3000
 target self
-stop
+break
 endif
 endfor
 
@@ -44,7 +44,7 @@ useobject 'key'
 waitfortarget 3000
 target 'found'
 useobject 'found'
-stop
+break
 endif
 endfor
 
