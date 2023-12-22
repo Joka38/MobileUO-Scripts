@@ -1,38 +1,61 @@
-unsetalias 'bag'
-headmsg 'Select restock source container' 23
-promptalias 'bag'
-// Regs
-@movetype 0xf7a 'bag' 'backpack' 0 0 0 'any' 51
-pause 1000
-@movetype 0xf86 'bag' 'backpack' 0 0 0 'any' 51
-pause 1000
-@movetype 0xf7b 'bag' 'backpack' 0 0 0 'any' 51
-pause 1000
-@movetype 0xf88 'bag' 'backpack' 0 0 0 'any' 51
-pause 1000
-@movetype 0xf8c 'bag' 'backpack' 0 0 0 'any' 51
-pause 1000
-@movetype 0xf8d 'bag' 'backpack' 0 0 0 'any' 51
-pause 1000
-@movetype 0xf85 'bag' 'backpack' 0 0 0 'any' 51
-pause 1000
-@movetype 0xf84 'bag' 'backpack' 0 0 0 'any' 51
-pause 1000
-// bandages
-@movetype 0xe21 'bag' 'backpack' 0 0 0 'any' 100
-pause 1000
-// food
-@movetype 0x97b 'bag' 'backpack' 0 0 0 'any' 25
-pause 1000
-// potions
-// gcure
-@movetype 0xf07 'bag' 'backpack' 0 0 0 'any' 51
-pause 1000
-// gheal
-@movetype 0xf0c 'bag' 'backpack' 0 0 0 'any' 51
-pause 1000
-// trefresh
-@movetype 0xf0b 'bag' 'backpack' 0 0 0 'any' 51
-pause 1000
 // release source container
+unsetalias 'source'
 unsetalias 'bag'
+
+headmsg 'Select restock source container' '23'
+promptalias 'source'
+headmsg 'Select bag' '43'
+promptalias 'bag'
+
+//// regs
+//bp
+@movetype 0x0f7a 'source' 'bag' 0 0 0 0 30
+pause 1000
+//md
+@movetype 0x0f86 'source' 'bag' 0 0 0 0 30
+pause 1000
+//bm
+@movetype 0x0f7b 'source' 'bag' 0 0 0 0 30
+pause 1000
+//ns
+@movetype 0x0f88 'source' 'bag' 0 0 0 0 30
+pause 1000
+//sa
+@movetype 0x0f8c 'source' 'bag' 0 0 0 0 30
+pause 1000
+//ss
+@movetype 0x0f8d 'source' 'bag' 0 0 0 0 30
+pause 1000
+//gs
+@movetype 0x0f85 'source' 'bag' 0 0 0 0 30
+pause 1000
+//gl
+@movetype 0x0f84 'source' 'bag' 0 0 0 0 30
+pause 1000
+
+//// bandages
+@movetype 0x0e21 'source' 'bag' 0 0 0 0 80
+pause 1000
+
+//// food(fish steak)
+@movetype 0x097b 'source' 'bag' 0 0 0 0 5
+pause 1000
+
+//// potions
+// gcp
+@movetype 0x0f07 'source' 'bag' 0 0 0 0 5
+pause 1000
+// ghp
+@movetype 0x0f0c 'source' 'bag' 0 0 0 0 3
+pause 1000
+// trp
+//@movetype 0x0f0b 'source' 'bag' 0 0 0 0 5
+//pause 1000
+
+////scroll
+//gate
+@movetype 0x1F60 'source' 'bag' 0 0 0 0 1
+pause 1000
+//recall
+//@movetype 0x1F4C 'source' 'bag' 0 0 0 0 1
+pause 1000
