@@ -1,0 +1,19 @@
+if not @findobject 'enemy' any ground 1 3
+@getenemy 'enemy' 'criminal' 'gray' 'closest'
+endif
+if @findobject 'enemy' any ground and @inrange 'enemy' 3
+useskill 'Animal Taming'
+autotargetobject 'enemy'
+clickobject 'enemy'
+else
+headmsg 'Get closer to Tame!!' 44
+stop
+endif
+pause 14000
+rename 'enemy' 'once'
+pause 3000
+msg 'once release'
+waitforcontext 'enemy' 8 1500
+waitforgump 0x909cc741 30000
+replygump 0x909cc741 2
+unsetalias 'enemy'
