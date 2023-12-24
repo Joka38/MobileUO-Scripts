@@ -34,13 +34,6 @@ target 'found'
 useskill 'detecting hidden'
 waitfortarget 3000
 target self
-pause 600
-getenemy 'murderer' 'enemy' 'criminal' 'gray' 'nearest' 'humanoid'
-if @inrange 'enemy' 10
-msg 'i ban thee'
-waitfortarget 5000
-target! 'enemy'
-endif
 stop
 endif
 endfor
