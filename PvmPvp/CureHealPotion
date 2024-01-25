@@ -1,0 +1,16 @@
+//cure heal potion
+if poisoned self
+if @findtype 0x0F07 any backpack
+useobject found
+stop
+else
+headmsg 'No Cure Potion' 33
+stop
+endif
+endif
+
+if @findtype 0x0F0C any backpack
+useobject found
+else
+headmsg 'No Heal Potion' 77
+endif
