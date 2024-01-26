@@ -1,0 +1,38 @@
+//mount 4 mares with list (exclude one by one)
+
+if @mounted
+useobject self
+stop
+endif
+
+if not listexists 'marepack'
+createlist 'marepack'
+endif
+
+if list 'marepack' == 0
+pushlist 'marepack' 0x0031e209
+pushlist 'marepack' 0x0009dcb4
+pushlist 'marepack' 0x0033639d
+pushlist 'marepack' 0x0006935d
+
+if not @findobject 0x0031e209 any 0 15
+poplist 'marepack' 0x0031e209
+endif
+if not @findobject 0x0009dcb4 any 0 15
+poplist 'marepack' 0x0009dcb4
+endif
+if not @findobject 0x0033639d any 0 15
+poplist 'marepack' 0x0033639d
+endif
+if not @findobject 0x0006935d any 0 15
+poplist 'marepack' 0x0006935d
+endif
+endif
+
+for 0 to marepack
+setalias 'mare' marepack[]
+endfor
+
+msg 'all follow me' 88
+useobject 'mare'
+poplist 'marepack' 'back'
