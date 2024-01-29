@@ -1,6 +1,13 @@
 //break barrel
+clearjournal
 if @findtype 0x0F43 any ground 0 2
 useobject found
+
+if @injournal 'You must wait' 'system'
+headmsg 'wait....' 27
+stop
+endif
+
 waitfortarget 3000
 targettype 0x0E77 946 2
 else
