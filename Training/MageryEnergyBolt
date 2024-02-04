@@ -1,0 +1,22 @@
+while findtype 0x0F7A any backpack and findtype 0x0F88 any backpack
+
+if mana > 20
+cast 'energy bolt'
+waitfortarget 30000
+target! self
+pause 2500
+endif
+
+movetype 0x0F52 any backpack backpack
+pause 1000
+
+if mana < 20
+useskill 'meditation'
+pause 20000
+endif
+
+endwhile
+
+playsound 41
+messagebox 'End of Macro' 'Not Enough Reagents'
+stop
