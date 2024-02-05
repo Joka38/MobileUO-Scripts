@@ -1,0 +1,42 @@
+//provo training
+
+clearjournal
+
+headmsg 'SELECT TARGET 1' 22
+promptalias 't1'
+headmsg 'SELECT TARGET 2' 44
+promptalias 't2'
+
+if not timerexists 'provo'
+createtimer 'provo'
+settimer 'provo' 10000
+endif
+
+while not dead
+
+if timer 'provo' > 10500
+useskill 'Provocation'
+pause 600
+
+if @injournal 'what instrument' 'system'
+waitfortarget 10000
+targettype! 0x0e9d any backpack
+endif
+
+waitfortarget 10000
+target 't1'
+waitfortarget 10000
+target 't2'
+pause 600
+
+if @injournal 'Your music fails' 'system'
+settimer 'provo' 5000
+else
+settimer 'provo' 0
+endif
+
+clearjournal
+
+endif
+
+endwhile
