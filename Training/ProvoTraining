@@ -19,8 +19,14 @@ useskill 'Provocation'
 pause 600
 
 if @injournal 'what instrument' 'system'
+if @findtype 0x0e9d any backpack
 waitfortarget 10000
-targettype! 0x0e9d
+target found
+else
+headmsg 'No Instrument Found' 22
+playsound 42
+stop
+endif
 endif
 
 waitfortarget 10000
