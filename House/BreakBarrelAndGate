@@ -1,0 +1,26 @@
+//dispel gate or break barrel
+//dispel gate
+if @findtype 0x0f6c any ground 0 10
+cast 'dispelfield'
+waitfortarget 10000
+target found
+stop
+endif
+
+//break barrel
+clearjournal
+if @findtype 0x0F43 any ground 0 2
+useobject found
+pause 600
+
+if @injournal 'You must wait' 'system'
+headmsg 'wait....' 88
+stop
+endif
+
+waitfortarget 3000
+targettype 0x0E77 946 2
+headmsg 'break!' 11
+else
+headmsg 'No Hatchet Found' 55
+endif
