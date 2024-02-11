@@ -1,0 +1,6 @@
+//teleport target and hide
+cast 'teleport'
+waitfortarget 3000
+while targetexists
+endwhile
+useskill 'hiding'
