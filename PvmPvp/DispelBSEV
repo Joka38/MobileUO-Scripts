@@ -1,0 +1,8 @@
+//dispel bs and ev
+if @findtype 0x023e any ground 0 10 or @findtype 0x00a4 any ground 0 10
+cast 'dispel'
+waitfortarget 3000
+target! found
+else
+headmsg 'No BS EV Found' 11
+endif
