@@ -1,0 +1,22 @@
+//apb
+if @findtype 0xe79 any backpack
+setalias 'trappouch' found
+else
+headmsg 'No Pouch Found' 33
+stop
+endif
+
+if not listexists 'apb'
+createlist 'apb'
+pushlist 'apb' 'open'
+endif
+
+if list 'apb' == 1
+cast 'magic trap'
+waitfortarget 3000
+target 'trappouch'
+poplist 'apb' front
+elseif list 'apb' == 0
+useobject 'trappouch'
+pushlist 'apb' 'open'
+endif
