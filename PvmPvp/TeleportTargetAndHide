@@ -1,9 +1,8 @@
 //teleport target and hide
 canceltarget
 cast 'teleport'
-warmode on
-warmode off
 waitfortarget 3000
 while targetexists
 endwhile
+warmode off
 useskill 'hiding'
