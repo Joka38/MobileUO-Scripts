@@ -1,0 +1,23 @@
+if not timerexists 'poison'
+createtimer 'poison'
+endif
+settimer 'poison' 10000
+
+while @findtype 0x0e9b any backpack
+useobject found
+waitforgump 0x38920ABD 15000
+replygump 0x38920ABD 21 
+pause 4500
+if @findtype 0x0F0A any backpack and timer 'poison' > 10000
+useskill 'Poisoning'
+waitfortarget 10000
+targettype 0x0F0A
+waitfortarget 10000
+targettype 0x0F52
+pause 3500
+if poisoned self
+usetype 0x0F07 any backpack
+pause 1000
+endif
+endif
+endwhile
