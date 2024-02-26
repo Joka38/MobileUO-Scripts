@@ -9,7 +9,7 @@ endif
 
 //break barrel
 clearjournal
-if @findtype 0x0F43 any ground 0 2
+if @findtype 0x0F43 any world 0 2 or @findtype 0x0F44 any world 0 2
 useobject found
 pause 600
 
