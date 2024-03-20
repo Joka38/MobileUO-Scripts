@@ -4,5 +4,6 @@ cast 'teleport'
 waitfortarget 3000
 while targetexists
 endwhile
+warmode on
 warmode off
 useskill 'hiding'
