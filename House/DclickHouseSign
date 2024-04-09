@@ -1,0 +1,11 @@
+//Dclick house sign for refresh
+if @findtype 0x0BD2 0 ground 0 5
+useobject found
+waitforgump 0x2879E252 15000
+replygump 0x2879E252 0 
+endif
+clickobject found
+if @injournal 'Welcome back' 'system'
+playsound 1045
+clearjournal
+endif
