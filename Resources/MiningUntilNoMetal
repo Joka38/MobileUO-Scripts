@@ -29,6 +29,12 @@ endif
 
 pause 850
 
+if weight > 420
+headmsg 'Need Unload !' 66
+playsound 42
+stop
+endif
+
 if @injournal 'no metal here' 'System'
 headmsg 'No More Metal Here!' '33'
 clearjournal
