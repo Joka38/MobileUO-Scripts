@@ -1,0 +1,8 @@
+sysmsg 'select container' '44'
+promptalias 'loot'
+sysmsg 'container found'
+@useobject 'loot'
+pause 800
+autoloot
+waitfortarget 2000
+@target 'loot'
