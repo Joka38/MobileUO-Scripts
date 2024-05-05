@@ -1,0 +1,28 @@
+//blacksmith training
+while findtype 0x0fbb any backpack
+
+usetype 0x0fbb any backpack
+waitforgump 0x38920ABD 3000
+replygump 0x38920ABD 21
+pause 2000
+
+//~45 mace: 0x0F5C
+//~53 maul: 0x143B
+//~70 kryss: 0x1401
+//~86 short spear: 0x1403
+//~95 platemail gorget: 0x1413
+//~GM platemail gloves:
+
+
+if @findtype 0x1413 any backpack
+waitforgump 0x38920ABD 3000
+replygump 0x38920ABD 14 
+waitfortarget 30000
+target 'found'
+pause 2000
+endif
+
+endwhile
+
+messagebox 'Macro Stop' 'Out of tool'
+stop
